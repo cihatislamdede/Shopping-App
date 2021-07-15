@@ -28,6 +28,7 @@ dependencies:
   lint: ^1.5.3
   provider: ^5.0.0
   uuid: ^3.0.4
+  intl: ^0.17.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

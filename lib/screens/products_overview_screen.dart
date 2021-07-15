@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_shop_app/prodivders/cart.dart';
 import 'package:my_shop_app/screens/cart_screen.dart';
+import 'package:my_shop_app/widgets/app_drawer.dart';
 import 'package:my_shop_app/widgets/badge.dart';
 import 'package:my_shop_app/widgets/products_grid.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('My Shop'),
         actions: [
           PopupMenuButton(
@@ -51,23 +53,27 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             ],
             icon: const Icon(Icons.more_vert),
           ),
-          Consumer<Cart>(
-            builder: (_, cart, ch) => Badge(
-              value: cart.itemCount.toString(),
-              color: Colors.transparent,
-              child: ch!,
-            ),
-            child: IconButton(
-              icon: const Icon(
-                Icons.shopping_cart,
-              ),
-              onPressed: () {
-                Navigator.of(context).pushNamed(CartScreen.routeName);
-              },
-            ),
-          ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Consumer<Cart>(
+          builder: (_, cart, ch) => Badge(
+            value: cart.itemCount.toString(),
+            color: Colors.transparent,
+            child: ch!,
+          ),
+          child: IconButton(
+            icon: const Icon(
+              Icons.shopping_cart,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushNamed(CartScreen.routeName);
+            },
+          ),
+        ),
+      ),
+      drawer: AppDrawer(),
       body: ProductsGrid(_showOnlyFavData),
     );
   }
