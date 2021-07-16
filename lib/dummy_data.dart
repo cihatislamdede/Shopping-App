@@ -33,4 +33,20 @@ List<Product> dummyData = [
     imageUrl:
         'https://productimages.hepsiburada.net/s/44/550/10807141105714.jpg',
   ),
+  Product(
+    id: 'p5',
+    title: 'Apple AirPods',
+    description: 'Heavy on features.Light on price.',
+    price: 149,
+    imageUrl:
+        'https://productimages.hepsiburada.net/s/89/550/110000031510507.jpg',
+  ),
+  Product(
+    id: 'p6',
+    title: 'Apple AirTag',
+    description: '1 pack',
+    price: 29,
+    imageUrl:
+        'https://productimages.hepsiburada.net/s/73/280-413/110000014870333.jpg',
+  ),
 ];

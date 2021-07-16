@@ -16,6 +16,20 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Cart'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+                onPressed: () {
+                  cart.clearCart();
+                },
+                icon: const Icon(
+                  Icons.delete_rounded,
+                  color: Colors.white,
+                  size: 30,
+                )),
+          )
+        ],
       ),
       body: cart.itemCount == 0
           ? const Center(
