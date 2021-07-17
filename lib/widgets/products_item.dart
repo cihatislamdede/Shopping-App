@@ -53,9 +53,18 @@ class ProductItem extends StatelessWidget {
             ),
           ),
           title: FittedBox(
-            child: Text(
-              product.title,
-              softWrap: true,
+            child: Column(
+              children: [
+                Text(
+                  product.title,
+                  softWrap: true,
+                ),
+                Text(
+                  '\$${product.price}',
+                  softWrap: true,
+                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+              ],
             ),
           ),
         ),
